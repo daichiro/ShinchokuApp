@@ -4,7 +4,7 @@ ShinchokuApp
 進捗どうですか  
 https://itunes.apple.com/jp/app/jin-buapuri/id750875336?mt=8
 
-LICENCE
+LICENSE
 ===========
 The MIT License
  
