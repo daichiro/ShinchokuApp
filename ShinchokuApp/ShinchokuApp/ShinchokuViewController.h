@@ -10,7 +10,7 @@
 
 @protocol ShinchokuViewDelegate <NSObject>
 
-- (void)shinchokuViewBack:(NSNumber*)diff;
+- (void)shinchokuViewBack:(NSNumber*)diff total:(NSNumber*)per;
 
 @end
 

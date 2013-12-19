@@ -204,14 +204,14 @@
 }
 
 #pragma mark - ShinchokuViewDelegate
-- (void)shinchokuViewBack:(NSNumber*)diff {
+- (void)shinchokuViewBack:(NSNumber*)diff total:(NSNumber *)per {
     [self dismissViewControllerAnimated:YES completion:nil];
     [self setContentsOfShinchoku];
     __block int blockDiff = [diff intValue];
     __block NSString *dateStr = [self getDateString:[NSDate date]];
     RIButtonItem *okButton = [RIButtonItem itemWithLabel:@"はい"];
     RIButtonItem *tweetButton = [RIButtonItem itemWithLabel:@"ツイートする" action:^{
-        [self tweet:[NSString stringWithFormat:@"%d%%進捗しました！ %@ #進捗アプリ", blockDiff, dateStr]];
+        [self tweet:[NSString stringWithFormat:@"%d%%進捗しました！(現在%d%%) %@ #進捗アプリ", blockDiff, [per intValue] , dateStr]];
     }];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"進捗完了" message:@"進捗を反映させました" cancelButtonItem:okButton otherButtonItems:tweetButton, nil];
     [alertView show];

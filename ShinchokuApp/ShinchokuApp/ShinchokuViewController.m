@@ -50,7 +50,7 @@
     dic = tmpDic;
     [defaults setObject:dic forKey:@"currentShinchoku"];
     [defaults synchronize];
-    [self.delegate shinchokuViewBack:diff];
+    [self.delegate shinchokuViewBack:diff total:[NSNumber numberWithDouble:self.stepper.value]];
 }
 
 #pragma mark - IBAction
