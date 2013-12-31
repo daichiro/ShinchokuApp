@@ -206,6 +206,9 @@
 #pragma mark - ShinchokuViewDelegate
 - (void)shinchokuViewBack:(NSNumber*)diff total:(NSNumber *)per {
     [self dismissViewControllerAnimated:YES completion:nil];
+    if (diff == nil && per == nil) {
+        return;
+    }
     [self setContentsOfShinchoku];
     __block int blockDiff = [diff intValue];
     __block NSString *dateStr = [self getDateString:[NSDate date]];

@@ -81,7 +81,7 @@
 }
 
 - (IBAction)pressedCancelButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate shinchokuViewBack:nil total:nil];
 }
 
 @end

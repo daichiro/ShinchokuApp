@@ -116,7 +116,6 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         if (indexPath.row == [self.tableView numberOfRowsInSection:0]-1) {
-            // 進捗cellは消させない
             return;
         }
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -142,8 +141,10 @@
 - (IBAction)pressedEditButton:(id)sender {
     if ([self.tableView isEditing]) {
         [self.tableView setEditing:NO animated:YES];
+        [self.navigationItem setHidesBackButton:NO animated:YES];
     } else {
         [self.tableView setEditing:YES animated:YES];
+        [self.navigationItem setHidesBackButton:YES animated:YES];
     }
 }
 
