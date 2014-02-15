@@ -128,7 +128,6 @@
                 [defaults setInteger:indexPath.row-1 forKey:@"SelectedIndexPath"];
             } else if (![tmpArray count]) {
                 [defaults setInteger:-1 forKey:@"SelectedIndexPath"];
-                [defaults setObject:nil forKey:@"currentShinchoku"];
             }
         }
         [defaults setObject:tmpArray forKey:@"ShinchokuArray"];
